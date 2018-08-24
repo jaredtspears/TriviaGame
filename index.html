@@ -41,17 +41,29 @@
                 <h1 class="display-4 ">Trivia Game</h1>
                 <p class="lead ">Philosophy Focused</p>
                     <hr class="my-4 ">
-                <p> 20 quesions in 3 minutes! Be prepaired! </p>
+               
             </div>
         </header>
 
         <div class= "container">
             <div class = "row">
                 <div class= "col-md-12">
-                   <!-- calling the timer and the form -->
+                    <!-- calling button to link to start the timer -->
+                   <!-- <button type="button" class="btn btn-dark" id ="start">Start Trivia Game <div id="display" >00:00</div></button> -->
+                   
+                   <div class="card w-50">
+                        <div class="card-body">
+                          <h5 class="card-title">Click to Start Trivia Game</h5>
+                          <p class="card-text">20 Questions in 3 minutes! Be prepaired!</p>
+                          <a href="#" class="btn btn-dark" id ="start">Play<div id="display" >00:00</div></a>
+                        </div>
+                      </div>
+
+
                    <div id ="count"></div>
                     <div class= "trivia" ></div>
-               
+
+            <button type="button" class="btn btn-dark" id = "returnScore">Submit</button>
                    
                 </div>
             </div>

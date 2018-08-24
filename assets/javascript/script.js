@@ -43,20 +43,7 @@ Will need a document.ready function(){}
         
 //global vars here:
 
-        //3:00 timer setting the total seconds to 180seconds
-    var totalSeconds = 60*3;
-        //for the minutes the total will start as 3.
-    var minutes = parseInt(totalSeconds/60);
-        //SECONDS NOT WORKING
-        //for the seconds (saw some guy try it like this, testing it out)
-    var seconds = parseInt(totalSeconds%60);
-                //loging at 180 currently
-         console.log("this is the total seconds " + totalSeconds);
-                //loging at 3
-         console.log("this is the minutes " + minutes);
-                //loging at 0
-         console.log("this is the seconds " + seconds);
-        //setting correct and incorrect scores to zero. 
+  
     var correctScore = 0;
     var incorrectScore = 0;
     var user;
@@ -82,7 +69,9 @@ var interval = setInterval(function(){
 
 //attempting to think of a way to have aArr and iArr not always in first and second but rather random.
 function RandomALocation(){
-    Math.floor(Math.random())
+    //tryint to randomize the choice positions attempting to do a randomizer var that is either aArr or iArr
+    var randomizer = aArr && iArr;
+    Math.floor(Math.random(randomizer) +aArr && iArr)
 }
 
 
@@ -125,7 +114,9 @@ function RandomALocation(){
         }
     
     }
-      
+
+    //trying to set up a place where a button will return the score of corrrect and incorrect answers on the trivia game
+      $("returnScore").on("click", correctScore + incorrectScore);
     }
 
     //setting timer function here:
@@ -235,8 +226,21 @@ function RandomALocation(){
 
 //try using setTime on the main function. 
     //timer function (MAY PLACE INTO MAIN document.ready function())
- /*
- 
+ /*__________________________________________________________________________________________________________________
+       //3:00 timer setting the total seconds to 180seconds
+    var totalSeconds = 60*3;
+        //for the minutes the total will start as 3.
+    var minutes = parseInt(totalSeconds/60);
+        //SECONDS NOT WORKING
+        //for the seconds (saw some guy try it like this, testing it out)
+    var seconds = parseInt(totalSeconds%60);
+                //loging at 180 currently
+         console.log("this is the total seconds " + totalSeconds);
+                //loging at 3
+         console.log("this is the minutes " + minutes);
+                //loging at 0
+         console.log("this is the seconds " + seconds);
+        //setting correct and incorrect scores to zero. 
     function checkTimer(){
 
 
@@ -265,4 +269,47 @@ function RandomALocation(){
 
  }
  checkTimer()
+ _______________________________________________________________________________________
+ 
  */
+//peter said this worked for him just testing it out...not seeming to work just yet probably missing something to turn it on.
+ var timer = {
+     time: 0,
+ }
+var intervalID;
+var running;
+var running = false;
+var timerNumber = timer.time;
+//this seems to display which is what I wanted..not linking to anything yet.
+$("#display").text("00:00");
+
+//trying to link the onload function for onlcik of the timer... NOT WORKING
+window.onload = function(){
+$("#start").on("click", runTimer());
+}
+//Timer begin
+function runTimer() {
+   if (!running) {
+       intervalID = setInterval(decrement, 1000);
+       running = true;
+   }
+}
+
+//Timer functionality
+function decrement() {
+   $("#timerHolder").html("<h3>Time Remaining: " + timerNumber + "</h3>");
+   timerNumber--;
+
+//stops timer upon reaching 0 seconds remaining
+   if(timerNumber === 0) {
+       incorrectScore++;
+       stop();
+       $("#answerDiv").html("Time has run out! The correct answer is: " +correctScore);
+   }
+}
+
+//Stop timer function
+function stop() {
+   running = false;
+   clearInterval(intervalID);
+}
