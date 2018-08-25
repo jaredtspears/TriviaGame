@@ -14,6 +14,9 @@
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Aladin" rel="stylesheet">
 
+    <!-- font awesome added a funny deaf sign being I'm half deaf (username xbox Ha1f Deaf) -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
     <!-- bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -33,9 +36,12 @@
 
 <body>
 
-        <!-- bkgrd image -->
-<img class = "bkgrdImg" src="https://static1.squarespace.com/static/55b79870e4b0abd99ecc2f4f/t/55be623ae4b09d8345d89b1e/1438540347426/Background%C2%A0%E2%80%93%C2%A0Firm+Philosophy.jpeg?format=2500w" alt="Yellow Background">
-    
+        <!-- bkgrd image and production logo... just for fun-->
+<div class = "bkgrdImg1"></div>
+<div class = "bkgrdImg2">
+    <br><br><br><br><br><br><br><br><br><br><b><br><br><br>
+    <p class = "ha1fDeaf">A Ha1f Deaf production <i class="fa fa-deaf" aria-hidden="true"></i></p></div>
+
     <header>
         <div class= <div class=" jumbotron ">
             <h1 id = "header" class="display-4 ">Trivia Game</h1>
@@ -72,13 +78,14 @@
                 <!-- this will be for the Submit button to return score -->
                 <br><br>
                 <!-- trying to do a pop above alert off bootstrap seemed like a fun way to have the results display -->
-                <button type="button" class="btn btn-lg btn-dark" id = "returnScore data-toggle="
+                <button name= "Submit1" type="submit" class="btn btn-lg btn-dark"  data-toggle="
                         popover title="Your Results:" data-placement="top" data-content=
                         "You answered this Many Correct: " + correctAnswers >
-                        Submit for Results! 
+                        Submit for Results! <div id = "returnScore"></div>
                         <!-- for the stop and reset of the timer NOT WORKING YET -->
                         <div id = "stopReset"></div>
                 </button>
+
             </div>
         </div>
 
