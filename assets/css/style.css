@@ -17,6 +17,7 @@ background: white;
 border-radius: 5px;
 opacity:.8;
 margin: 5px;
+padding:15px;
 }
 #header{
     font-size: 90px;
@@ -36,6 +37,13 @@ p{
     opacity: 1;
     font-size: 35px;
 }
-#returnScore{
-    text-align: center;
+button,.btn{
+   
+    font-size: 30px !important;
+}
+form {
+    font-size: 25px;
+    padding:5px;
+    margin:5px;
+
 }

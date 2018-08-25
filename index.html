@@ -71,11 +71,14 @@
                 <div class = "trivia" ></div>
                 <!-- this will be for the Submit button to return score -->
                 <br><br>
-                <button type="button" class="btn btn-dark" id = "returnScore" >
-                        Submit 
+                <!-- trying to do a pop above alert off bootstrap seemed like a fun way to have the results display -->
+                <button type="button" class="btn btn-lg btn-dark" id = "returnScore data-toggle="
+                        popover title="Your Results:" data-placement="top" data-content=
+                        "You answered this Many Correct: " + correctAnswers >
+                        Submit for Results! 
                         <!-- for the stop and reset of the timer NOT WORKING YET -->
-                    <div id = "stopReset"></div>
-                </button>  
+                        <div id = "stopReset"></div>
+                </button>
             </div>
         </div>
 

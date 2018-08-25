@@ -1,27 +1,27 @@
 
 //question array, the answer array, and the incorrect answer array
 //set up with radio buttons after the object Timer.
-var qArr = ["Who is the father of western philosophy?", "Which philosopher said I think therefore I am?", 
-"What is Platos theory of forms talk about?", "Who was the father of modernism?","What was Socretes known for?", 
-"Kant wrote which of these books?", "Which philosopher came up with deconstructionism?", "Hegel wrote which of these books?", 
-"Sophies World was a book written to explain all western philosophy in narrative - who was this book marketted towards initially?", 
-"The cave analogy was written by Plato to explain what?", "This philospher was a Rationalist, birthed the 'theory of probability' in mathmatics?", 
-"This philosopher came up with evolution.", "This philosopher was more or less the father of modern psychology.", 
-"This philosopher came up with the uberman and is know for being the father of atheism.", 
-"Who wrote Fear and Trembling andthe famous consept of the leap of faith.", 
-"Socialism was invented by."," Foucalt was known for what book?", "Lyotard was known for book in postmodernism?", 
-"Machiavelli did what for philosophy?", "Spinoza did what famous contribution to philosophy?"];
-var aArr = ["Plato", "Descartes", "That invisible forms represent the most true ideal expression of reality.", "Descartes",
-"He is credited with laying the fundamentals of modern Western philosophy. He is known for creating Socratic irony and the Socratic method.", 
-"Religion Within the Limits of Reason Alone", "Derrida", "Time and Being", "high school freshman", "The awoken man", "Pascal", "Darwin", "Freud", 
-"Nietzche", "Keirkegaard", "Marx", " Discipline and Punish", "The Postmodern Condition: A Report on Knowledge", 
-"Being regarded as the father of modern political science", 
-"He was best known for his Ethics, a monumental work that presents an ethical vision unfolding out of a monistic metaphysics in which God and Nature are identified."];
-var iArr = ["Socretes", "Hume", "Forms are real and matter ethically.", "Hobbs",
-"He was Plato's student.", "Book of Reasonable Philosophy", "Paine", "Between Time", 
-"Graduate Students", "The asleep man", "Bacon", "Dalton", "Dewey", "Plato", "Bergson",
-"Keirkegaard", " Crime and Politics", "The Modern Condition: A Report on Reason", 
-"Being regarded as the father of modern social science", "Best known for the theory on Being"];
+var qArr = ["1. Who is the father of western philosophy?", "2. Which philosopher said I think therefore I am?", 
+"3. What is Platos theory of forms talk about?", "4. Who was the father of modernism?","5. What was Socretes known for?", 
+"6. Kant wrote which of these books?", "7. Which philosopher came up with deconstructionism?", "8. Hegel wrote which of these books?", 
+"9. Sophies World was a book written to explain all western philosophy in narrative - who was this book marketted towards initially?", 
+"10. The cave analogy was written by Plato to explain what?", "11. This philospher was a Rationalist, birthed the 'theory of probability' in mathmatics?", 
+"12. This philosopher came up with evolution.", "13. This philosopher was more or less the father of modern psychology.", 
+"14.This philosopher came up with the uberman and is know for being the father of atheism.", 
+"15.Who wrote Fear and Trembling andthe famous consept of the leap of faith.", 
+"16. Socialism was invented by.","17. Foucalt was known for what book?", "18. Lyotard was known for book in postmodernism?", 
+"19. Machiavelli did what for philosophy?", "20. Spinoza did what famous contribution to philosophy?"];
+var aArr = ["Plato ", "Descartes ", "That invisible forms represent the most true ideal expression of reality. ", "Descartes ",
+"He is credited with laying the fundamentals of modern Western philosophy. He is known for creating Socratic irony and the Socratic method. ", 
+"Religion Within the Limits of Reason Alone", "Derrida", "Time and Being", "high school freshman ", "The awoken man ", "Pascal ", "Darwin ", "Freud ", 
+"Nietzche ", "Keirkegaard ", "Marx ", " Discipline and Punish ", "The Postmodern Condition: A Report on Knowledge ", 
+"Being regarded as the father of modern political science ", 
+"He was best known for his Ethics, a monumental work that presents an ethical vision unfolding out of a monistic metaphysics in which God and Nature are identified. "];
+var iArr = ["Socretes", "Hume ", "Forms are real and matter ethically. ", "Hobbs ",
+"He was Plato's student. ", "Book of Reasonable Philosophy ", "Paine ", "Between Time ", 
+"Graduate Students ", "The asleep man ", "Bacon ", "Dalton ", "Dewey ", "Plato ", "Bergson ",
+"Keirkegaard ", " Crime and Politics ", "The Modern Condition: A Report on Reason ", 
+"Being regarded as the father of modern social science", "Best known for the theory on Being "];
 
 //global vars
 var correctAnswer = 0;
@@ -35,7 +35,7 @@ var timerRunning = false;
 window.onload = function() {
 $("#start").on("click", Timer.start);
 $("#stopReset").on("click", Timer.stopReset);
-
+Timer.stopReset();
 }
 
 var Timer = {
@@ -48,6 +48,10 @@ var Timer = {
         clearInterval(intervalId);
         TimerRunning = false;
         console.log(intervalId);
+       //tring to make it so the counter does not continue past 0
+       if(Timer.time === -1){
+        clearInterval(intervalId);
+    }
     },
     start: function() {
         //if the timer is not running do this if statement
@@ -55,6 +59,7 @@ var Timer = {
             intervalId = setInterval(Timer.count, 1000);
             clockRunning = true;
         }
+     
     },
     count: function (){
         //should desend in time
@@ -87,9 +92,9 @@ function gameStart(){
     var theForm =  $("<form>");
     //declaring the questions to a paragraph with the text being read from the array in order of the array. 
     var theQ = $("<p>").text(qArr[i]);
-    //be keen to note the name is needed so only 1 answer will allow for per <p>
-    var theA = $("<input type='radio' name='answerGroup"+i+"' value = 'correct'>"); 
-    var theI = $("<input type='radio' name='answerGroup"+i+"' value = 'incorrect'>");
+    //be keen to note the name is needed so only 1 answer will allow for per <p> added <br> to make them line up vertically
+    var theA = $("<br><input type='radio' name='answerGroup"+i+"' value = 'correct'>"); 
+    var theI = $("<br><input type='radio' name='answerGroup"+i+"' value = 'incorrect'>");
 
     //appending the form with the questions
     theForm.append(theQ);
