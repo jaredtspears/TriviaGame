@@ -62,3 +62,25 @@ form {
     margin:5px;
 
 }
+/* wanted to jazz up my non working form with a cool color array */
+#displayCountDown {
+    animation:colorchange 20s infinite alternate; 
+}
+@-webkit-keyframes colorchange {
+  0% {
+    color:rgb(119, 119, 0);
+  }
+  25% { 
+    color: rgb(112, 45, 45);
+  }
+  50% {
+    color: maroon;
+  }
+  75% {
+    color: rgb(160, 125, 79);
+  }
+  100% { 
+    color: rgb(33, 66, 33);
+  }
+  
+}

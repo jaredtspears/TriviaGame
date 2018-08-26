@@ -141,15 +141,24 @@ function gameStart(){
     //adding up the correct answer
     correctAnswer();
     function correctAnswer(){
-        var user;
-        //if user picks the correct button answer
-        if (user === aArr[i]){
-            //trying to get this to submit the calculated answers 
-            theA = $("<br><input name='Submit1' type='submit' value= 'submit' onclick='Test(this.form)'>")
-            correctAnswer ++;
-            $("#returnScore").html("Pretend I have a working game and you won! ")
-        }
+        //if in the form the answer is check alert correct "checked" wasnt worked
+        var checked = correctAnswer ++;
+        if(theForm.theA.checked){
+           alert(correctAnswer);
+       }else{ 
+           incorrectAnswer++;
+           alert(incorrectAnswer);
+       }
+       //tried this first but it didnt work
+        // var user;
+        // //if user picks the correct button answer
+        // if (user === aArr[i]){
+        //     //trying to get this to submit the calculated answers 
+        //     theA = $("<br><input name='Submit1' type='submit' value= 'submit' onclick='Test(this.form)'>")
+        //     correctAnswer ++;
+        //     $("#returnScore").html("Pretend I have a working game and you won! ")
+        // }
     }
 }
 
-/* attempted several ways to get teh function of randomizer to work... not working. */
+/* attempted several ways to get the function of randomizer to work... not working. */
