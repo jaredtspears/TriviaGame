@@ -141,20 +141,27 @@ function gameStart(){
     //adding up the correct answer
     correctAnswer();
     function correctAnswer(){
+
         //if in the form the answer is check alert correct "checked" wasnt worked
         var checked = correctAnswer ++;
-       
+    //    ======================for loop that I will use once it works==============================================================
         //trying to make a for loop for locating the buttons picked. Not finished yet
-        for(i=0; i<answerGroup.length; i++){
-            if($("input[name="answerGroup" + i]:checked"){
-                if ( $(this).attr(value) == "correct" ) {
-                alert(correctAnswer);
-                }else{  
-                    incorrectAnswer++;
-                    alert(incorrectAnswer);
-                }
-            }
-        }
+        // for(i=0; i<answerGroup.length; i++){
+        //     if($("input[name="answerGroup" + i]:checked"){
+        //         if ( $(this).attr(value) == "correct" ) {
+        //         alert(correctAnswer);
+        //         }else{  
+        //             incorrectAnswer++;
+        //             alert(incorrectAnswer);
+        //         }
+        //     }
+        // }
+
+// ==============================end of for loop that will be used ================================================================
+
+
+
+        // =====================================================================================================
        //tried this first but it didnt work
         // var user;
         // //if user picks the correct button answer
